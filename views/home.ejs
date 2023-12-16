@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Issue-Tracker</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Issue Tracker - Dashboard</title>
   </head>
   <body>
-    <ul>
+    <h1>LIST OF PROJECTS</h1>
+    <div class="projects-container">
       <% for(var i = 0; i< project.length;i++) {%>
+      <div class="project">
       <a href="/description/id=<%=project[i].id%>">
-        <li>
-          <p><%=project[i].name%></p>
-          <p>by <%=project[i].author%></p>
-        </li>
+          <p class="project-name"><%=project[i].name%></p>
+          <p class="author-name">by <%=project[i].author%></p>
       </a>
+      </div>
       <% }%>
-    </ul>
+    </div>
     <form action="/add" method="get">
-      <button type="submit">Add</button>
+      <button type="submit">ADD</button>
     </form>
   </body>
 </html>

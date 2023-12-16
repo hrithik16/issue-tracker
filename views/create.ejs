@@ -3,33 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Issue Tracker - Add Project</title>
+    <link rel="stylesheet" href="/css/create.css" />
   </head>
   <body>
-    Welcome to create page
-    <form action="/add" method="post">
-      <label for="name">Name</label>
+    <a href="/" class="back-button"
+      ><span class="back-arrow">&larr;</span> Back</a
+    >
+    <h1 class="page-title">Create Your Project</h1>
+    <form action="/add" method="post" class="project-form">
+      <label for="name" class="form-label">Project Name:</label>
       <input
         type="text"
         name="name"
-        placeholder="Name of Your Project?"
+        placeholder="Enter the name of your project"
         id="name"
+        class="form-input"
         required
       />
-      <label for="author">Author</label>
+      <label for="author" class="form-label">Author:</label>
       <input
         type="text"
         name="author"
-        placeholder="Author of Your Project?"
+        placeholder="Enter the author of the project"
         id="author"
+        class="form-input"
         required
       />
-      <br />
-      <label for="description">Description</label>
-      <br />
-      <textarea name="description" rows="4" cols="50" id="description" required>
-      </textarea>
-      <button type="submit">Create</button>
+      <label for="description" class="form-label">Description:</label>
+      <textarea
+        name="description"
+        rows="4"
+        placeholder="Enter a brief description of your project"
+        id="description"
+        class="form-textarea"
+        required
+      ></textarea>
+      <button type="submit" class="form-button">Create Project</button>
     </form>
   </body>
 </html>

@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>welcome to description page</h1>
-    <p><%=project.name %></p>
-    <p><%=project.description %></p>
-    <h2>List of issues</h2>
-    <form action="/description/id=<%=project.id%>/title" method="post">
-      <input
-        type="text"
-        name="searchParams"
-        placeholder="Title or description"
-        id="searchParams"
-        required
-      />
-      <button type="submit">Search</button>
-    </form>
-
-    <form action="/description/id=<%=project.id%>/author" method="post">
-      <input
-        type="text"
-        name="searchParams"
-        placeholder="Author Name"
-        id="searchParams"
-        required
-      />
-      <button type="submit">Search</button>
-    </form>
-
-    <form action="/description/id=<%=project.id%>/label" method="post">
-      <input type="checkbox" id="critical" name="critical" value="1" />
-      <label for="critical">Critical</label><br />
-      <input type="checkbox" id="cosmetic" name="cosmetic" value="1" />
-      <label for="cosmetic">Cosmetic</label><br />
-      <input type="checkbox" id="frontEnd" name="frontEnd" value="1" />
-      <label for="frontEnd">Front-End</label><br />
-      <input type="checkbox" id="api" name="api" value="1" />
-      <label for="api">API</label><br /><br />
-      <input type="submit" value="Submit" />
-    </form>
-
-    <% for(var i = 0; i< bugs.length;i++) {%>
-    <p><%=bugs[i].title%></p>
-    <p><%=bugs[i].label%></p>
-    <br />
-    <% }%>
-    <form action="/addBug/<%= project.id %>" method="get">
-      <button type="submit">Create Bug</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Description</title>
+  <link rel="stylesheet" href="/css/description.css">
+</head>
+<body>
+  <a href="/" class="back-button"><span class="back-arrow">&larr;</span> Back</a>
+  <section class="project-info">
+    <h1>Welcome to the Description Page</h1>
+    <p class="project-name"><%=project.name %></p>
+    <p class="project-description"><%=project.description %></p>
+  </section>
+  <section class="content-container">
+    <section class="bug-list">
+      <% for(var i = 0; i< bugs.length; i++) {%>
+        <div class="bug-item">
+          <p class="bug-title"><%=bugs[i].title%></p>
+          <p class="bug-description"><%=bugs[i].description%></p>
+          <p class="bug-author">logged By: <%=bugs[i].author%></p>
+        </div>
+      <% }%>
+    </section>
+    <section class="filter-section">
+      <h2>Search By Title</h2>
+      <form action="/description/id=<%=project.id%>/title" method="post" class="search-form">
+        <input
+          type="text"
+          name="searchParams"
+          placeholder="Enter the Title"
+          class="search-input"
+          required
+        />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+      <h2>Search By Author</h2>
+      <form action="/description/id=<%=project.id%>/author" method="post" class="search-form">
+        <input
+          type="text"
+          name="searchParams"
+          placeholder="Author Name"
+          class="search-input"
+          required
+        />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+      <h2>Filter By Label</h2>
+      <form action="/description/id=<%=project.id%>/label" method="post" class="label-form">
+        <input type="checkbox" id="critical" name="label" value="critical" />
+        <label for="critical">Critical</label>
+        <input type="checkbox" id="cosmetic" name="label" value="cosmetic" />
+        <label for="cosmetic">Cosmetic</label>
+        <input type="checkbox" id="frontEnd" name="label" value="frontEnd" />
+        <label for="frontEnd">Front-End</label>
+        <input type="checkbox" id="api" name="label" value="api" />
+        <label for="api">API</label>
+        <input type="submit" value="Submit" class="label-submit-button" />
+        <a href="/description/id=<%=project.id%>" class="clear-button">Clear</a>
+      </form>
+    </section>
+  </section>
+  <form action="/addBug/<%= project.id %>" method="get" class="add-bug-form">
+    <button type="submit" class="add-bug-button">Create Bug</button>
+  </form>
+</body>
 </html>

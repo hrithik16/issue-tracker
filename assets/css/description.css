@@ -1,0 +1,187 @@
+body, h1, p, a, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .project-info {
+    margin-bottom: 20px;
+    background-color: #e0f7fa; /* Light blue background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-info h1 {
+    color: #333;
+  }
+  
+  .project-name {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .project-description {
+    color: #555;
+  }
+  
+  .content-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .bug-list {
+    flex-basis: calc(70% - 20px);
+    background-color: #fff; /* White background color for bug list */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .bug-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensure the shadow doesn't overflow */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .bug-item:hover {
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+  }
+  
+  .bug-content {
+    padding: 20px;
+  }
+  
+  .bug-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .bug-description {
+    margin-bottom: 10px;
+  }
+  
+  .bug-author {
+    color: #888;
+  }
+  
+  .filter-section {
+    flex-basis: calc(30% - 20px);
+    background-color: #ffecb3; /* Light yellow background color for filter section */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .search-form,
+  .label-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between; /* Adjusted to space-between */
+  }
+  
+  .search-input,
+  .label-input {
+    width: calc(45% - 5px); /* Adjust the width of the input boxes and add space */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .search-button,
+  .label-submit-button {
+    width: calc(45% - 5px); /* Adjust the width of the submit buttons and add space */
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover,
+  .label-submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .add-bug-form {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .add-bug-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-bug-button:hover {
+    background-color: #45a049;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .clear-button {
+    width: calc(45% - 5px); /* Adjust the width of the submit buttons and add space */
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .clear-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }  
+  
+  .back-arrow {
+    font-size: 24px;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    color: #555;
+  }

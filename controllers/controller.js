@@ -10,6 +10,16 @@ module.exports.dashboard = async function (req, res) {
   }
 };
 
+module.exports.delete = async function () {
+  try {
+    await Projects.deleteMany({});
+    await Bugs.deleteMany({})
+    return res.render("home", { project: ProjectList });
+  } catch (error) {
+    console.error("Error Fetching project:", error);
+  }
+};
+
 module.exports.addPage = function (req, res) {
   return res.render("create");
 };
@@ -108,7 +118,7 @@ module.exports.author = async function (req, res) {
   console.log("search triggered");
   console.log(searchParams);
   
-  const bug = await findSpecificBug(id, 'title', searchParams)
+  const bug = await findSpecificBug(id, 'author', searchParams)
   const project = await findSpecificProject(id)
   console.log(bug)
   return res.render("description", {
