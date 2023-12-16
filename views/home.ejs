@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Issue-Tracker</title>
-</head>
-<body>
-    Hello World
+  </head>
+  <body>
     <ul>
-        <% for(var i = 0; i< project.length;i++) {%>
-        <a href="/description/<%=project[i].id%>">
+      <% for(var i = 0; i< project.length;i++) {%>
+      <a href="/description/id=<%=project[i].id%>">
         <li>
-            <p><%=project[i].name%></p>
-            <p>by <%=project[i].author%></p>
+          <p><%=project[i].name%></p>
+          <p>by <%=project[i].author%></p>
         </li>
-        </a>
-        <% }%>
+      </a>
+      <% }%>
     </ul>
     <form action="/add" method="get">
-        <button type="submit">Add</button>
+      <button type="submit">Add</button>
     </form>
-</body>
+  </body>
 </html>

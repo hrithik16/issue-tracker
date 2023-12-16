@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     Welcome to the create page
     <form action="/addBug/<%=project.id%>" method="post">
-        <label for="name">Title</label>
-        <input type="text" name="title" placeholder="Add a title" id="title" required>
-        <label for="author">Author</label>
-        <input type="text" name="author" placeholder="Author" id="author" required>
-        <select name="label" id="label" required>
-            <option value="critical">Critical</option>
-            <option value="cosmetic">Cosmetic</option>
-            <option value="frontEnd">Front End Issue</option>
-            <option value="api">API Issue</option>
-        </select>
-        <textarea name="description" rows="4" cols="50" id="description" required>
-        </textarea>
-        <button type="submit">Add Bug</button>
+      <label for="name">Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Add a title"
+        id="title"
+        required
+      />
+      <label for="author">Author</label>
+      <input
+        type="text"
+        name="author"
+        placeholder="Author"
+        id="author"
+        required
+      />
+      <select name="label" id="label" required>
+        <option value="critical">Critical</option>
+        <option value="cosmetic">Cosmetic</option>
+        <option value="frontEnd">Front End Issue</option>
+        <option value="api">API Issue</option>
+      </select>
+      <textarea name="description" rows="4" cols="50" id="description" required>
+      </textarea>
+      <button type="submit">Add Bug</button>
     </form>
-</body>
+  </body>
 </html>

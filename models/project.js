@@ -1,5 +1,6 @@
-import { Schema, model } from 'mongoose';
-const Project = new Schema({
+const mongoose = require('mongoose');
+
+const Project = new mongoose.Schema({
   id: {
     type: Number,
     required: true,
@@ -18,4 +19,7 @@ const Project = new Schema({
   },
 });
 
-export default model("Project", Project);
+const project = mongoose.model('Project', Project)
+
+
+module.exports = project

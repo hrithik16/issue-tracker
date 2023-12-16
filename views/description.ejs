@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>welcome to description page</h1>
     <p><%=project.name %></p>
     <p><%=project.description %></p>
-    <form action="/createBug/<%= project.id %>" method="get">
-        <button type="submit">Create Bug</button>
+    <h2>List of issues</h2>
+    <form action="/description/id=<%=project.id%>/title" method="post">
+      <input
+        type="text"
+        name="searchParams"
+        placeholder="Title or description"
+        id="searchParams"
+        required
+      />
+      <button type="submit">Search</button>
     </form>
-</body>
+
+    <form action="/description/id=<%=project.id%>/author" method="post">
+      <input
+        type="text"
+        name="searchParams"
+        placeholder="Author Name"
+        id="searchParams"
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <form action="/description/id=<%=project.id%>/label" method="post">
+      <input type="checkbox" id="critical" name="critical" value="1" />
+      <label for="critical">Critical</label><br />
+      <input type="checkbox" id="cosmetic" name="cosmetic" value="1" />
+      <label for="cosmetic">Cosmetic</label><br />
+      <input type="checkbox" id="frontEnd" name="frontEnd" value="1" />
+      <label for="frontEnd">Front-End</label><br />
+      <input type="checkbox" id="api" name="api" value="1" />
+      <label for="api">API</label><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <% for(var i = 0; i< bugs.length;i++) {%>
+    <p><%=bugs[i].title%></p>
+    <p><%=bugs[i].label%></p>
+    <br />
+    <% }%>
+    <form action="/addBug/<%= project.id %>" method="get">
+      <button type="submit">Create Bug</button>
+    </form>
+  </body>
 </html>
