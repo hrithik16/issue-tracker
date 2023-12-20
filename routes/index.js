@@ -8,7 +8,6 @@ router.get("/", controller.dashboard);
 router.get("/add", controller.addPage);
 router.get("/description/id=:id", controller.description);
 router.get("/addBug/:id", controller.addBugPage);
-router.get("/delete", controller.delete);
 
 router.post("/add", controller.add);
 router.post("/addBug/:id", controller.addBug);

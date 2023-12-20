@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Project = new mongoose.Schema({
   id: {
@@ -19,7 +19,6 @@ const Project = new mongoose.Schema({
   },
 });
 
-const project = mongoose.model('Project', Project)
+const project = mongoose.model("Project", Project);
 
-
-module.exports = project
+module.exports = project;

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Bug = new mongoose.Schema({
   id: {
@@ -24,10 +24,8 @@ const Bug = new mongoose.Schema({
   project_id: {
     type: Number,
     required: true,
-  }
-
+  },
 });
-const bug = mongoose.model('Bug', Bug)
+const bug = mongoose.model("Bug", Bug);
 
-
-module.exports = bug
+module.exports = bug;

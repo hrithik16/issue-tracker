@@ -1,5 +1,10 @@
-console.log('Hola')
-const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://jarvis:dBa7jXhQsW9KDZcm@cluster1.s081pi1.mongodb.net/').then(() => console.log('Connected!'));
+const mongoose = require("mongoose");
+const mongoPassword = process.env.MONGO_PASSWORD; //Accuring the password from the env File
+const url =
+  "mongodb+srv://friday:" +
+  mongoPassword +
+  "@cluster0.azdxdwv.mongodb.net/issue-tracker";
 
-const db = mongoose.connection
+mongoose.connect(url).then(() => console.log("Connected!"));
+
+const db = mongoose.connection;

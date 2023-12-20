@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home.css" />
     <title>Issue Tracker - Dashboard</title>
   </head>
   <body>
@@ -11,10 +11,10 @@
     <div class="projects-container">
       <% for(var i = 0; i< project.length;i++) {%>
       <div class="project">
-      <a href="/description/id=<%=project[i].id%>">
+        <a href="/description/id=<%=project[i].id%>">
           <p class="project-name"><%=project[i].name%></p>
           <p class="author-name">by <%=project[i].author%></p>
-      </a>
+        </a>
       </div>
       <% }%>
     </div>

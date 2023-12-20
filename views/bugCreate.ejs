@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Issue Tracker - Add Bug</title>
-  <link rel="stylesheet" href="/css/bug-create.css">
-</head>
-<body>
-  <a href="/description/id=<%=project.id%>" class="back-button"><span class="back-arrow">&larr;</span> Back</a>
-  <h1 class="page-title">Bug Logging Page</h1>
-  <form action="/addBug/<%=project.id%>" method="post" class="bug-form">
-    <label for="title" class="form-label">Title:</label>
-    <input
-      type="text"
-      name="title"
-      placeholder="Add a title"
-      id="title"
-      class="form-input"
-      required
-    />
-    <label for="author" class="form-label">Author:</label>
-    <input
-      type="text"
-      name="author"
-      placeholder="Author"
-      id="author"
-      class="form-input"
-      required
-    />
-    <label for="label" class="form-label">Label:</label>
-    <select name="label" id="label" class="form-select" required>
-      <option value="critical">Critical</option>
-      <option value="cosmetic">Cosmetic</option>
-      <option value="frontEnd">Front End Issue</option>
-      <option value="api">API Issue</option>
-    </select>
-    <label for="description" class="form-label">Description:</label>
-    <textarea
-      name="description"
-      rows="4"
-      placeholder="Enter a brief description of the bug"
-      id="description"
-      class="form-textarea"
-      required
-    ></textarea>
-    <button type="submit" class="form-button">Add Bug</button>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue Tracker - Add Bug</title>
+    <link rel="stylesheet" href="/css/bug-create.css" />
+  </head>
+  <body>
+    <a href="/description/id=<%=project.id%>" class="back-button"
+      ><span class="back-arrow">&larr;</span> Back</a
+    >
+    <h1 class="page-title">Bug Logging Page</h1>
+    <form action="/addBug/<%=project.id%>" method="post" class="bug-form">
+      <label for="title" class="form-label">Title:</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Add a title"
+        id="title"
+        class="form-input"
+        required
+      />
+      <label for="author" class="form-label">Author:</label>
+      <input
+        type="text"
+        name="author"
+        placeholder="Author"
+        id="author"
+        class="form-input"
+        required
+      />
+      <label for="label" class="form-label">Label:</label>
+      <select name="label" id="label" class="form-select" required>
+        <option value="critical">Critical</option>
+        <option value="cosmetic">Cosmetic</option>
+        <option value="frontEnd">Front End Issue</option>
+        <option value="api">API Issue</option>
+      </select>
+      <label for="description" class="form-label">Description:</label>
+      <textarea
+        name="description"
+        rows="4"
+        placeholder="Enter a brief description of the bug"
+        id="description"
+        class="form-textarea"
+        required
+      ></textarea>
+      <button type="submit" class="form-button">Add Bug</button>
+    </form>
+  </body>
 </html>

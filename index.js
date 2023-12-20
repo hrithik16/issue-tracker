@@ -1,3 +1,4 @@
+require('dotenv').config(); //For Env variables
 const express = require('express')
 const db = require('./config/connect');
 const port = 8000;
